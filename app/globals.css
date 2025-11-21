@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Custom brand colors - Light mode */
+    --brand: 210 75% 15%; /* #0A1E3A */
+    --brand-foreground: 0 0% 98%;
+    --accent: 186 100% 59%; /* #22D3EE */
+    --accent-foreground: 210 75% 15%;
+    --sand: 43 42% 82%; /* #E6D5B8 */
+    --sand-foreground: 210 75% 15%;
+    
+    /* shadcn/ui colors - Light mode */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 221 83% 53%; /* #1D4ED8 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%; /* #F3F4F6 */
+    --secondary-foreground: 222 47% 32%; /* #374151 */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Custom brand colors - Dark mode */
+    --brand: 210 75% 15%; /* Keep same brand color */
+    --brand-foreground: 0 0% 98%;
+    --accent: 186 100% 59%; /* Keep same accent color */
+    --accent-foreground: 210 75% 15%;
+    --sand: 43 42% 82%; /* Keep same sand color */
+    --sand-foreground: 210 75% 15%;
+    
+    /* shadcn/ui colors - Dark mode */
+    --background: 222 47% 11%; /* Dark version of #374151 */
+    --foreground: 0 0% 95%;
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 95%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 221 83% 53%; /* Keep same primary */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 16% 57%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 221 83% 53%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 hover:bg-muted;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  
+  .chat-message {
+    @apply animate-fade-in;
+  }
+  
+  .quick-chip {
+    @apply px-4 py-2 bg-card border rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 hover:shadow-md cursor-pointer;
+  }
+  
+  .soft-gate-banner {
+    @apply bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/20 rounded-lg p-4 text-center animate-fade-in;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "faq-embeddings",
+  "version": "1.0.0",
+  "description": "Upload FAQ documents to vector database",
+  "main": "upload-faq.ts",
+  "scripts": {
+    "upload": "tsx upload-faq.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
